@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>Работа снегоуборочной техники Управляющих компаний г.Чебоксары</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/leaflet/0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="http://cdn.jsdelivr.net/leaflet/0.7.3/leaflet.js"></script>
+    <script src="http://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="query" class="rightPanel">
+      <div class="panelContainer">
+        <div id="question">
+          <i class="fa fa-info"></i>
+        </div>    
+        <div class="mainHeader">
+          Подробная информация по трактору 97-48
+        </div>
+      </div>
+    </div>
+    <div
+      id="questPopup"
+    >
+      <div>
+        <i class="fa fa-times" id="closePopup"></i>
+        <p>
+          Отображаются данные по движению техники с 00ч.:00мин. текущих суток на начало часа, в котором осуществлен запрос информации
+        </p>
+        <p>
+          Для получения отчета о работе нажмите на иконку трактора или значок отчета в списке.
+        </p>
+        <p>
+          Информация предоставлена с использованием <b>МГИС г.Чебоксары</b> и системы мониторинга <b>ГЛОНАСС</b> <a href="http://chebtelekom.ru">МБУ "Чебоксары-Телеком"</a>.
+        </p>
+      </div>
+    </div>
+  <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
