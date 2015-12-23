@@ -7,7 +7,7 @@ html, body {
 
 #map {
   position: absolute;
-  width: 100%;
+  width: 65%;
   height: 100%;
   top: 0;
   left: 0;
@@ -30,13 +30,29 @@ html, body {
   font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+.btn i.fa {
+  font-size: 24px;
+  color: #666;
+}
+
+.btn.btnWithDesc i.fa {
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.btn.btnWithDesc span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #777;
+}
+
 .mainHeader {
   margin-bottom: 15px;
   padding-top: 10px;
   padding-right: 10px;
   font-size: 18px;
   font-weight: bold;
-  color: #505050;
+  color: #777;
 }
 
 #question {
@@ -44,6 +60,7 @@ html, body {
   right: 10px;
   width: 30px;
   height: 30px;
+  padding-top: 2px;
   border: 3px solid #ddd;
   border-radius: 30px;
   text-align: center;
@@ -188,4 +205,16 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
 }
 .tf_funct ul li:hover {
   opacity: 0.9 !important;
+}
+
+.descRow {margin-bottom: 10px;}
+.descRow span {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #777;
+}
+.descRow span:first-child {
+  width: 40%;
+  font-weight: bold;
 }
