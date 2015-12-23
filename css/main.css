@@ -23,6 +23,24 @@ html, body {
   left: 0;
 }
 
+.spinner {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+}
+.spinner:before {
+  content: '\e907';
+  display: inline-block;
+  font-family: 'icomoon';
+  font-size: 28px;
+  color: #c3c3c3;
+  animation: spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 .rightPanel {
   position: absolute;
   width: 35%;
@@ -160,7 +178,7 @@ html, body {
   cursor: pointer;
 }
 table.tableForm tr:last-child td { border-bottom: 1px solid transparent; }
-table.tableForm tr:hover td { border-top-color: #ccc; border-bottom: 1px solid #ccc; }
+table.tableForm tr:hover td { border-top-color: #ccc; border-bottom: 1px solid #ccc; background-color: #f5f5f5;}
 table.tableForm tr:hover td:first-child { border-left-color: transparent; }
 table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
 
@@ -175,12 +193,16 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
 .tf_line .tf_icon > div{
   width: 32px;
   height: 32px;
-  background-image: url('../img/icons/tractor.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
   border: 2px solid #ddd;
   border-radius: 25px;
+  background-color: #fff;
+}
+.tf_line .tf_icon > div:after {
+  content: '\e900';
+  position: absolute;
+  margin: -2px 0 0 4px;
+  font-family: 'icomoon';
+  font-size: 20px;
 }
 .tf_icon_move i {
   display: block;
@@ -194,8 +216,11 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   border: 2px solid #46ADF7;
   font-size: 12px;
 }
-.tf_icon_unmove {
-  opacity: 0.6;
+.tf_icon_move:after {
+  color: #656565;
+}
+.tf_icon_unmove:after {
+  color: #656565;
 }
 .tf_line .tf_title {
   width: 70px;
@@ -219,6 +244,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   font-size: 20px;
   cursor: pointer;
   opacity: 0.3;
+  transition: 300ms;
 }
 .tableForm tr:hover .tf_funct ul li {
   opacity: 0.5;
@@ -226,7 +252,9 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
 .tf_funct ul li:hover {
   opacity: 0.9 !important;
 }
-
+.tableForm tr .tf_funct ul li.active {
+  opacity: 1;
+}
 .descRow {margin-bottom: 10px;}
 .descRow span {
   display: inline-block;
@@ -252,7 +280,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   border-radius: 32px;
   border: 1px solid #337ab7;*/
 }
-.leaflet-marker-icon.tractorIcon:after, .ttt:after {
+.leaflet-marker-icon.tractorIcon:after {
   content: '\e900';
   display: block;
   position: absolute;
@@ -262,7 +290,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   font-size: 20px;
   color: #333;
 }
-.leaflet-marker-icon.tractorIcon:before, .ttt:before {
+.leaflet-marker-icon.tractorIcon:before {
   content: '\e903';
   display: block;
   position: absolute;
@@ -284,7 +312,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
 .leaflet-marker-icon.tractorIcon.tr_1:after {
   color: #A27900;
 }
-.leaflet-marker-icon.tractorIcon.tr_2:after, .ttt:after {
+.leaflet-marker-icon.tractorIcon.tr_2:after {
   color: blue;
 }
 .leaflet-marker-icon.tractorIcon.tr_3:after {
