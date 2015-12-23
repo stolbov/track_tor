@@ -46,6 +46,18 @@ html, body {
   color: #777;
 }
 
+.btn.btn-primary i.fa {
+  color: #fff;
+}
+
+.btn.btn-primary.btnWithDesc span {
+  color: #fff;
+}
+
+.btnFields .btn {
+  margin-right: 10px;
+}
+
 .mainHeader {
   margin-bottom: 15px;
   padding-top: 10px;
