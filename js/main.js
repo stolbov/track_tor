@@ -32,30 +32,37 @@
   
   var icons = {
   1: L.icon({
-      iconUrl: '/geoworks/tractors/1.png',
-      iconSize: [27, 31],
+      iconUrl: 'img/icons/tractor.png',
+      iconSize: [24, 24],
       iconAnchor: [13.5, 13.5],
       popupAnchor: [0, -11]
     }),
   2: L.icon({
-      iconUrl: '/geoworks/tractors/2.png',
-      iconSize: [27, 31],
+      iconUrl: 'img/icons/tractor.png',
+      iconSize: [24, 24],
       iconAnchor: [13.5, 13.5],
       popupAnchor: [0, -11]
     }),
   3: L.icon({
-      iconUrl: '/geoworks/tractors/3.png',
-      iconSize: [27, 31],
+      iconUrl: 'img/icons/tractor.png',
+      iconSize: [24, 24],
       iconAnchor: [13.5, 13.5],
       popupAnchor: [0, -11]
     }),
   4: L.icon({
-      iconUrl: '/geoworks/tractors/4.png',
-      iconSize: [27, 31],
+      iconUrl: 'img/icons/tractor.png',
+      iconSize: [32,32],
       iconAnchor: [13.5, 13.5],
       popupAnchor: [0, -11]
     })
   };
+  var tractorIconClasses = [
+    'stand',
+    'moveLeft',
+    'moveRight',
+    'moveTop',
+    'moveBottom'
+  ];
   var ukNames = {};
   var to = null;
   //L.esri.basemapLayer('Streets').addTo(map);
@@ -73,7 +80,11 @@
     });
     }, 500);
       return L.marker(latlng, {
-        icon: icons[Math.floor((Math.random() * 4) + 1)]
+        // icon: icons[Math.floor((Math.random() * 4) + 1)]
+        icon: L.divIcon({
+          className: 'tractorIcon tr_' + Math.floor(Math.random() * 5) + ' ' + tractorIconClasses[Math.floor(Math.random() * 5)],
+          iconSize: [32, 32]
+        })
       });
     }
   }).addTo(map);
@@ -115,7 +126,7 @@
   var truckId = feature.properties.dNumber.slice(0, 2) + feature.properties.dNumber.slice(3, 5);
     return L.Util.template('<p>Время: <strong>{time}</strong><br>Организация: ' + 
   '{ukName}<br>Номер: {dNumber}' + 
-  '<br>Загрузить отчет: <span title="Загрузить отчет"><a href="' +  reportServerUrl + '/reports/' + truckId + '"><img src="/geoworks/tractors/file_pdf.png" height=20></img></a></span></p>', feature.properties);
+  '<br>Загрузить отчет: <span title="Загрузить отчет"><a href="' +  reportServerUrl + '/reports/' + truckId + '"><i class="fa fa-file-text"></i></a></span></p>', feature.properties);
   });
   });
   /**/
