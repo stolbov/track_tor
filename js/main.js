@@ -63,6 +63,13 @@
     'moveTop',
     'moveBottom'
   ];
+  var busIconClasses = [
+    '_20',
+    '_40',
+    '_60',
+    '_80',
+    '_nitro'
+  ];
   var ukNames = {};
   var to = null;
   //L.esri.basemapLayer('Streets').addTo(map);
@@ -79,13 +86,20 @@
       direction.add(option);
     });
     }, 500);
+      // return L.marker(latlng, {
+      //   // icon: icons[Math.floor((Math.random() * 4) + 1)]
+      //   icon: L.divIcon({
+      //     className: 'tractorIcon tr_' + Math.floor(Math.random() * 5) + ' ' + tractorIconClasses[Math.floor(Math.random() * 5)],
+      //     iconSize: [32, 32]
+      //   })
+      // });
       return L.marker(latlng, {
         // icon: icons[Math.floor((Math.random() * 4) + 1)]
         icon: L.divIcon({
-          className: 'tractorIcon tr_' + Math.floor(Math.random() * 5) + ' ' + tractorIconClasses[Math.floor(Math.random() * 5)],
+          className: 'busIcon bus_' + Math.floor(Math.random() * 5) + ' ' + busIconClasses[Math.floor(Math.random() * 5)],
           iconSize: [32, 32]
         })
-      });
+      });  
     }
   }).addTo(map);
   function zoomToFeature (controllerId) {

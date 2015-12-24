@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>Работа снегоуборочной техники Управляющих компаний г.Чебоксары</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/leaflet/0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="http://cdn.jsdelivr.net/leaflet/0.7.3/leaflet.js"></script>
+    <script src="http://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="query" class="rightPanel">
+      <div class="panelContainer">
+        <div id="question">
+          <i class="fa fa-info"></i>
+        </div>    
+        <div class="mainHeader">
+          Маршрутные такси г.Чебоксары
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" style="position: absolute; right: 15px; border-bottom-left-radius: 0;
+    border-top-left-radius: 0;">
+            <i class="fa fa-search" style="font-size:14px; color: #fff;"></i>
+          </button>
+          <input type="text" class="form-control" placeholder="Найти..." style="padding-right: 50px;">
+        </div>
+        <br/>
+        <table class="tableForm">
+          <tbody>
+            <tr class="tf_titleLine openLine">
+              <td colspan="4">
+                <span>маршрут №36</span>
+                <span class="busSmallDesc" title="всего машин на маршруте">
+                  <i class="fa fa-bus"></i>
+                  2
+                </span>
+                <span class="busSmallDesc" title="машин с превышением скорости">
+                  <i class="fa fa-bus speedyBusIcon"></i>
+                  1
+                </span>
+                <span class="busSmallDesc" title="слежение за машинами">
+                  <i class="fa fa-bullseye"></i>
+                  1
+                </span>
+              </td>
+            </tr>
+            <tr class="tf_line" title="Последний раз перемещался: 20.12.2015 12:00">
+              <td class="tf_icon busIcon">
+                <div class="tf_icon_move"></div>
+              </td>
+              <td class="tf_titleBus">А 001 АА 121 rus</td>
+              <td class="tf_speed">20-40 км/ч</td>
+              <td class="tf_funct busFunct">
+                <ul>
+                  <li>
+                    <i class="fa fa-bullseye" title="Приблизить"></i>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="tf_line" title="Последний раз перемещался: 20.12.2015 12:00">
+              <td class="tf_icon busIcon">
+                <div class="tf_icon_speedy"></div>
+              </td>
+              <td class="tf_titleBus">А 007 АА 121 rus</td>
+              <td class="tf_speed">90 км/ч</td>
+              <td class="tf_funct busFunct">
+                <ul>
+                  <li class="active">
+                    <i class="fa fa-bullseye" title="Следить"></i>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="tf_clearLine">
+              <td colspan="4"></td>
+            </tr>
+            <tr class="tf_titleLine closeLine">
+              <td colspan="4">
+                <span>маршрут №40</span>
+                <span class="busSmallDesc" title="всего машин на маршруте">
+                  <i class="fa fa-bus"></i>
+                  10
+                </span>
+                <span class="busSmallDesc" title="машин с превышением скорости">
+                  <i class="fa fa-bus speedyBusIcon"></i>
+                  1
+                </span>
+                <span class="busSmallDesc" title="слежение за машинами">
+                  <i class="fa fa-bullseye"></i>
+                  2
+                </span>
+              </td>
+            </tr>
+            <tr class="tf_titleLine openLine">
+              <td colspan="4">
+                <span>маршрут №42</span>
+                <span class="busSmallDesc" title="всего машин на маршруте">
+                  <i class="fa fa-bus"></i>
+                  2
+                </span>
+                <span class="busSmallDesc" title="машин с превышением скорости">
+                </span>
+                <span class="busSmallDesc" title="слежение за машинами">
+                  <i class="fa fa-bullseye"></i>
+                  1
+                </span>
+              </td>
+            </tr>
+            <tr class="tf_line" title="Последний раз перемещался: 20.12.2015 12:00">
+              <td class="tf_icon busIcon">
+                <div class="tf_icon_move"></div>
+              </td>
+              <td class="tf_titleBus">А 001 АА 121 rus</td>
+              <td class="tf_speed">40-60 км/ч</td>
+              <td class="tf_funct busFunct">
+                <ul>
+                  <li>
+                    <i class="fa fa-bullseye" title="Приблизить"></i>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="tf_line" title="Последний раз перемещался: 20.12.2015 12:00">
+              <td class="tf_icon busIcon">
+                <div class="tf_icon_unmove"></div>
+              </td>
+              <td class="tf_titleBus">А 007 АА 121 rus</td>
+              <td class="tf_speed">&lt;0 км/ч</td>
+              <td class="tf_funct busFunct">
+                <ul>
+                  <li class="active">
+                    <i class="fa fa-bullseye" title="Следить"></i>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="tf_clearLine">
+              <td colspan="4"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br/>
+        <div class="spinner"></div>
+        <br/>
+        <!--<div class="leaflet-marker-icon busIcon bus_1 _nitro" style="top: 500px; left: 50px;"></div>-->
+      </div>
+    </div>
+
+    <div
+      id="questPopup"
+    >
+      <div>
+        <i class="fa fa-times" id="closePopup"></i>
+        <p>
+          Данные отображаются  по движению техники с 00ч.:00мин. текущих суток на начало часа, в котором осуществлен запрос информации.
+        </p>
+        <p>
+          Для получения отчета о работе нажмите на значок отчета в списке.
+        </p>
+        <p>
+          Информация предоставлена с использованием <b>МГИС г.Чебоксары</b> и системы мониторинга <b>ГЛОНАСС</b> <a href="http://chebtelekom.ru" target="_blank">МБУ "Чебоксары-Телеком"</a>.
+        </p>
+      </div>
+    </div>
+  <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

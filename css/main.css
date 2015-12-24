@@ -179,15 +179,17 @@ html, body {
   color: #666;
 }
 
-.tableForm td {
+.tableForm tr td {
   border: 1px solid transparent;
   border-bottom: 0;
+}
+.tableForm tr.tf_line td {
   cursor: pointer;
 }
-table.tableForm tr:last-child td { border-bottom: 1px solid transparent; }
-table.tableForm tr:hover td { border-top-color: #ccc; border-bottom: 1px solid #ccc; background-color: #f5f5f5;}
-table.tableForm tr:hover td:first-child { border-left-color: transparent; }
-table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
+table.tableForm tr.tf_line:last-child td { border-bottom: 1px solid transparent; }
+table.tableForm tr.tf_line:hover td { border-top-color: #ccc; border-bottom: 1px solid #ccc; background-color: #f5f5f5;}
+table.tableForm tr.tf_line:hover td:first-child { border-left-color: transparent; }
+table.tableForm tr.tf_line:hover td:last-child  { border-right-color: transparent; }
 
 .tableForm .tf_line td {
   padding: 12px 6px 6px;
@@ -205,10 +207,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   background-color: #fff;
 }
 .tf_line .tf_icon > div:after {
-  content: '\e900';
   position: absolute;
-  margin: -2px 0 0 4px;
-  font-family: 'icomoon';
   font-size: 20px;
 }
 .tf_icon_move i {
@@ -253,6 +252,9 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   opacity: 0.3;
   transition: 300ms;
 }
+.tf_line .tf_funct ul li:first-child {
+  padding-left: 0px;
+}
 .tableForm tr:hover .tf_funct ul li {
   opacity: 0.5;
 }
@@ -273,19 +275,71 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   width: 40%;
   font-weight: bold;
 }
+tr.tf_titleLine td{
+  padding-bottom: 6px;
+}
+.tf_titleLine span:first-child:before {
+  font-family: 'FontAwesome';
+  padding-right: 8px;
+}
+.tf_titleLine.openLine span:first-child:before {
+  content: '\f078';
+}
+.tf_titleLine.closeLine span:first-child:before {
+  content: '\f054';
+}
+tr.tf_titleLine td span {
+  display: inline-block;
+}
+tr.tf_titleLine td span:nth-child(1) {
+  width: 180px;
+}
+.tf_titleLine td span {
+  opacity: 0.7;
+}
+.tf_titleLine td span:first-child {
+  padding-left: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
+}
+.tf_titleLine td span:first-child:hover {
+  opacity: 1;
+}
+.tf_titleLine td span.busSmallDesc {
+  width: 50px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.tf_titleLine td span.busSmallDesc i {
+  padding-right: 4px;
+}
+table.tableForm tr.tf_clearLine td:first-child {
+  padding-top: 40px;
+}
+.fa.fa-bus.speedyBusIcon:before {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+  padding: 3px;
+}
 
 /* Leaflet hack */
 .leaflet-popup-content-wrapper {
   border-radius: 2px;
 }
 
-/* Tractor Icons */
-.leaflet-marker-icon.tractorIcon, .ttt {
+/* Tractors */
+.tf_line .tf_icon.tractorIcon > div:after {
+  content: '\e900';
+  margin: -2px 0 0 4px;
+  font-family: 'icomoon';
+}
+.leaflet-marker-icon.tractorIcon {
   width: 32px;
   height: 32px;
-  /*background-color: #fff;
-  border-radius: 32px;
-  border: 1px solid #337ab7;*/
 }
 .leaflet-marker-icon.tractorIcon:after {
   content: '\e900';
@@ -317,7 +371,7 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   color: #3A8A00;
 }
 .leaflet-marker-icon.tractorIcon.tr_1:after {
-  color: #A27900;
+  color: #B97203;
 }
 .leaflet-marker-icon.tractorIcon.tr_2:after {
   color: blue;
@@ -358,4 +412,96 @@ table.tableForm tr:hover td:last-child  { border-right-color: transparent; }
   -moz-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
+}
+
+/* Buses */
+.tf_line .tf_titleBus {
+  width: 145px;
+  font-weight: normal;
+}
+.tf_line .tf_speed {
+  font-weight: normal;
+}
+.tf_line  .tf_funct.busFunct {
+  width: 40px;
+}
+.tf_line .tf_icon.busIcon > div:after {
+  content: '\f207';
+  margin: 0px 0 0 6px;
+  font-family: 'FontAwesome';
+  font-size: 19px;
+}
+.leaflet-marker-icon.busIcon {
+  width: 32px;
+  height: 32px;
+}
+.tf_line .tf_icon.busIcon > div.tf_icon_unmove {
+  border-color: #ddd;
+}
+.tf_line .tf_icon.busIcon > div.tf_icon_move {
+  border-color: #3A8A00;
+}
+.tf_line .tf_icon.busIcon > div.tf_icon_speedy {
+  border-color: #ff0000;
+}
+.leaflet-marker-icon.busIcon:after {
+  content: '\f207';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  font-family: 'FontAwesome';
+  font-size: 20px;
+  color: #333;
+}
+.leaflet-marker-icon.busIcon:before {
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: -17px;
+  width: 65px;
+  height: 18px;
+  padding: 0px;
+  font-size: 12px;
+  color: #000;
+  text-align: center;
+  border-radius: 3px;
+}
+.leaflet-marker-icon.busIcon.bus_0:after {
+  color: #3A8A00;
+}
+.leaflet-marker-icon.busIcon.bus_1:after {
+  color: #B97203;
+}
+.leaflet-marker-icon.busIcon.bus_2:after {
+  color: blue;
+}
+.leaflet-marker-icon.busIcon.bus_3:after {
+  color: #000;
+}
+.leaflet-marker-icon.busIcon.bus_4:after {
+  color: #FF0000;
+}
+.leaflet-marker-icon.busIcon.bus_5:after {
+  color: #30008A;
+}
+.leaflet-marker-icon.busIcon._20:before {
+  content: '<20км/ч';
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.leaflet-marker-icon.busIcon._40:before {
+  content: '20-40км/ч';
+  background-color: rgba(70, 173, 247, 0.7);
+}
+.leaflet-marker-icon.busIcon._60:before {
+  content: '40-60км/ч';
+  background-color: rgba(81, 234, 31, 0.7);
+}
+.leaflet-marker-icon.busIcon._80:before {
+  content: '60-80км/ч';
+  background-color: rgba(234, 209, 31, 0.7);
+}
+.leaflet-marker-icon.busIcon._nitro:before {
+  content: '>80км/ч';
+  background-color: rgba(234, 78, 31, 0.7);
 }
