@@ -460,12 +460,13 @@ table.tableForm tr.tf_clearLine td:first-child {
   top: -9px;
   left: -17px;
   width: 65px;
-  height: 18px;
+  height: 17px;
   padding: 0px;
   font-size: 12px;
   color: #000;
   text-align: center;
   border-radius: 3px;
+  /*background-color: transparent !important;*/
 }
 .leaflet-marker-icon.busIcon.bus_0:after {
   color: #3A8A00;
@@ -505,3 +506,65 @@ table.tableForm tr.tf_clearLine td:first-child {
   content: '>80км/ч';
   background-color: rgba(234, 78, 31, 0.7);
 }
+
+
+/* New Bus Icon */
+.leaflet-marker-icon.newBusIcon {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 32px;
+  border: 2px solid;
+  border-color: #666;
+}
+.leaflet-marker-icon.newBusIcon .newBusIcon_marker {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: -2px;
+  left: -2px;
+}
+.leaflet-marker-icon.newBusIcon .newBusIcon_marker:before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 11px;
+  width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #666;  
+  background-color: transparent;
+}
+.leaflet-marker-icon.newBusIcon .newBusIcon_marker:after {
+  content: '';
+  position: absolute;
+  top: 31px;
+  left: 11px;
+  width: 10px;
+  height: 4px;
+  background-color: #666;
+}
+.leaflet-marker-icon.newBusIcon .newBusIcon_title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+.leaflet-marker-icon.newBusIcon._stand {
+
+}
+.leaflet-marker-icon.newBusIcon._normal {
+  border-color: #029200;
+}
+.leaflet-marker-icon.newBusIcon._speed {
+  border-color: #C58900;
+}
+.leaflet-marker-icon.newBusIcon._nitro {
+  border-color: #ff0000;
+}
+/* END New Bus Icon */

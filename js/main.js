@@ -70,6 +70,12 @@
     '_80',
     '_nitro'
   ];
+  var newBusIconClasses = [
+    '_stand',
+    '_normal',
+    '_speed',
+    '_nitro'
+  ];
   var ukNames = {};
   var to = null;
   //L.esri.basemapLayer('Streets').addTo(map);
@@ -93,15 +99,27 @@
       //     iconSize: [32, 32]
       //   })
       // });
+      // return L.marker(latlng, {
+      //   // icon: icons[Math.floor((Math.random() * 4) + 1)]
+      //   icon: L.divIcon({
+      //     className: 'busIcon bus_' + Math.floor(Math.random() * 5) + ' ' + busIconClasses[Math.floor(Math.random() * 5)],
+      //     iconSize: [32, 32]
+      //     // html: '<span><b>!!!</b></span>'
+      //   })
       return L.marker(latlng, {
         // icon: icons[Math.floor((Math.random() * 4) + 1)]
         icon: L.divIcon({
-          className: 'busIcon bus_' + Math.floor(Math.random() * 5) + ' ' + busIconClasses[Math.floor(Math.random() * 5)],
-          iconSize: [32, 32]
+          className: 'newBusIcon ' + newBusIconClasses[Math.floor(Math.random() * 4)],
+          iconSize: [32, 32],
+          html: '' +
+            '<div class="newBusIcon_marker" style="transform: rotate(' + Math.floor(Math.random() * 360) + 'deg);"></div>' +
+            '<div class="newBusIcon_title">' + Math.floor(Math.random() * 100) + '</div>' +
+            ''
         })
       });  
     }
   }).addTo(map);
+
   function zoomToFeature (controllerId) {
     var bounds = L.latLngBounds([]);
   var i = 0;
