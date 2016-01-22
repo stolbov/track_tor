@@ -80,7 +80,8 @@
   var to = null;
   //L.esri.basemapLayer('Streets').addTo(map);
   var stops = L.esri.featureLayer({
-    url: 'http://sdi.cap.ru/arcgis/rest/services/cheb/cheb_zhkh_tractors/FeatureServer/0',
+    // url: 'http://sdi.cap.ru/arcgis/rest/services/cheb/cheb_zhkh_tractors/FeatureServer/0',
+    url: 'http://sdi.cap.ru/geoworks/featureserver/services/tractors/FeatureServer/0'
     pointToLayer: function (geojson, latlng) {
     ukNames[geojson.properties.ukName] = true;
     clearTimeout(to);
